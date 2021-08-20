@@ -1,15 +1,24 @@
-let toFilter;
-let filtered
 let podcastUrls= [];
-
-const extract= (data) => 
+let temp = []
+// function will extract urls containing mp3 string
+module.exports = extractUrlsContainingMP3= (data) =>
 {
-    toFilter =  Document.querySelectorAll("span .html-attribute-value");
-    filtered = tofilter.filter(item => 
+    const dataArray = data.split('\n');
+    dataArray.map(item => 
         {
             if(item.includes(".mp3"))
-            {return item}
+            {
+                temp.push(item)
+            }
         });
+        filterStringsOnMP3(temp);
+        return podcastUrls;
 }
 
-module.exports.extrator = extract;
+const filterStringsOnMP3 = (data) => 
+{
+    data.map(item => 
+        {
+            podcastUrls.push(item.substring(item.search("https"), item.search(".mp3")+4));
+        })    
+}
