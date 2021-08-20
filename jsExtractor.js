@@ -19,6 +19,7 @@ const filterStringsOnMP3 = (data) =>
 {
     data.map(item => 
         {
-            podcastUrls.push(item.substring(item.search("https"), item.search(".mp3")+4));
+            console.log(item.substring(item.search("http"), item.search(".mp3")+4));
+            podcastUrls.push(item.substring(item.search("http"), item.search(".mp3")+4));
         })    
 }

@@ -5,4 +5,3 @@ const routes = require("./Router/routes"); // magix happens here
 
 app.use("/", routes); // make server use correct route
 app.listen(port, () => { console.log(`listening on port : ${port}`); }); // start server
-

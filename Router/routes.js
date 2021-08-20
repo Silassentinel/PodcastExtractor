@@ -6,6 +6,7 @@ const importer = require("../importer");
 const fileData = importer.importMeth("./dataFile.xml")
 
 const urls = require("../jsExtractor")(fileData);
+const downloader = require("../downloader");
 
 router.use(bodyparser.urlencoded({ extended: false }));
 router.use(bodyparser.json());
@@ -21,5 +22,12 @@ router.get("/", (req, res) =>
     res.write("</html>");
     res.end();
 });
+
+
+// const linkList = importer.importMeth("./podcasts/BBC4FridayNightComedy.html")
+// const urls2 = require("../jsExtractor")(linkList);
+
+downloader.downloader('./podcasts/indiehacker.txt','/home/silas/Music/IndieHacker');
+downloader.downloader('./podcasts/ChangeLog.txt','/home/silas/Music/ChangeLog');
 
 module.exports = router;
