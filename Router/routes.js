@@ -28,6 +28,5 @@ router.get("/", (req, res) =>
 // const urls2 = require("../jsExtractor")(linkList);
 
 downloader.downloader('./podcasts/indiehacker.txt','/home/silas/Music/IndieHacker');
-downloader.downloader('./podcasts/ChangeLog.txt','/home/silas/Music/ChangeLog');
 
 module.exports = router;
