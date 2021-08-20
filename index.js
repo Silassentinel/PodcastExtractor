@@ -1,11 +1,8 @@
-const express = require('express');
-const app = express();
-const port = process.env.PORT || 3000;
-const routes = require("./Router/routes");
+const express = require('express'); // require express
+const app = express(); // express app
+const port = process.env.PORT || 3000; // port
+const routes = require("./Router/routes"); // magix happens here
 
-app.use(express.json());
-app.use(express.urlencoded({ extended:true}));
-
-app.use("/", routes);
-app.listen(port, () => { console.log(`listening on port : ${port}`); });
+app.use("/", routes); // make server use correct route
+app.listen(port, () => { console.log(`listening on port : ${port}`); }); // start server
 
